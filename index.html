@@ -2,26 +2,21 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <title>Girasoles GIF</title>
+  <title>Mi Flor</title>
   <style>
     body, html {
       height: 100%;
       margin: 0;
       padding: 0;
-      overflow: hidden; /* Evita barras de scroll */
-      background-color: #000; /* Color de fondo mientras carga el GIF */
+      overflow: hidden;
     }
-    #bg-gif {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      transform: translateX(-50%) translateY(-50%);
-      z-index: -1; /* Pone el GIF detrás de cualquier otro contenido */
-      filter: brightness(90%); /* Opcional: oscurece un poco el GIF */
+    body {
+      /* --- Estilos para la imagen de fondo --- */
+      background-image: url('flor.png');
+      background-size: cover; /* Escala la imagen para cubrir todo el espacio */
+      background-position: center center; /* Centra la imagen */
+      background-repeat: no-repeat; /* Evita que la imagen se repita */
+      background-color: #000; /* Se mostrará si la imagen no carga */
     }
     h1 {
         color: white;
@@ -33,10 +28,6 @@
   </style>
 </head>
 <body>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Helianthus_annuus_2008-07-21_a.JPG/1280px-Helianthus_annuus_2008-07-21_a.JPG" id="bg-gif" alt="Fotografía de un girasol">
-
-  <h1>Girasol</h1>
-
+  <h1>Mi Flor</h1>
 </body>
-</html></body>
 </html>
