@@ -1,26 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Girasol con p5.js</title>
-    <style>
-      body {
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background-color: #333;
-      }
-    </style>
-    <!-- Cargar la biblioteca p5.js desde un CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
-    <!-- Cargar tu script de dibujo -->
-    <script src="sketch.js"></script>
-  </head>
-  <body>
-    <main></main>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <title>Girasoles GIF</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* Evita barras de scroll */
+      background-color: #000; /* Color de fondo mientras carga el GIF */
+    }
+    #bg-gif {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translateX(-50%) translateY(-50%);
+      z-index: -1; /* Pone el GIF detrás de cualquier otro contenido */
+      filter: brightness(90%); /* Opcional: oscurece un poco el GIF */
+    }
+    h1 {
+        color: white;
+        font-family: sans-serif;
+        text-align: center;
+        padding-top: 40vh;
+        text-shadow: 2px 2px 4px #000000;
+    }
+  </style>
+</head>
+<body>
+  <!-- Este es un GIF de ejemplo. Puedes cambiar la URL en el atributo src por la de cualquier otro GIF -->
+  <img src="https://i.gifer.com/752I.gif" id="bg-gif" alt="Campo de girasoles">
+
+  <h1>Campo de Girasoles</h1>
+
+</body>
 </html>
