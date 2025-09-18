@@ -4,19 +4,30 @@
   <meta charset="utf-8" />
   <title>Mi Flor</title>
   <style>
-    html, body {
+    body, html {
+      height: 100%;
       margin: 0;
       padding: 0;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #f0f0f0;
+      overflow: hidden;
+    }
+    body {
+      /* --- Estilos para la imagen de fondo --- */
+      background-image: url('./flor.png');
+      background-size: cover; /* Escala la imagen para cubrir todo el espacio */
+      background-position: center center; /* Centra la imagen */
+      background-repeat: no-repeat; /* Evita que la imagen se repita */
+      background-color: #000; /* Se mostrará si la imagen no carga */
+    }
+    h1 {
+        color: white;
+        font-family: sans-serif;
+        text-align: center;
+        padding-top: 40vh;
+        text-shadow: 2px 2px 4px #000000;
     }
   </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
-  <script src="sketch.js"></script>
 </head>
 <body>
+  <h1>Mi Flor</h1>
 </body>
 </html>
