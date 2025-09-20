@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Noelbis</title>
   <style>
     body, html {
@@ -18,7 +19,7 @@
       background-repeat: no-repeat; /* Evita que la imagen se repita */
       background-color: #000; /* Se mostrará si la imagen no carga */
     }
-    h1 {
+    p {
         color: white;
         font-family: sans-serif;
         text-align: center;
@@ -27,9 +28,10 @@
         position: relative;
         z-index: 2;
     }
-    h1 span {
+    p span {
         display: inline-block;
         animation: wind 5s infinite ease-in-out;
+        white-space: pre-wrap;
     }
     #particle-container {
       position: absolute;
@@ -81,7 +83,7 @@
 </head>
 <body>
   <div id="particle-container"></div>
-  <h1>Poema</h1>
+  <p>Tus ojos, dos soles, giran y me miran,<br>como girasoles buscando la luz.<br>En su cálido brillo, mis anhelos suspiran,<br>y en su dulce destello, encuentro mi cruz.<br><br>Son faros que guían mi alma perdida,<br>en un campo dorado de sueños y azahar.<br>Tu mirada, mi amada, es la flor más querida,<br>un poema de luz que no puedo dejar de amar.</p>
 
   <script>
     const container = document.getElementById('particle-container');
@@ -97,14 +99,20 @@
       container.appendChild(particle);
     }
 
-    const h1 = document.querySelector('h1');
-    const text = h1.textContent;
-    h1.innerHTML = '';
-    for (let i = 0; i < text.length; i++) {
-      const span = document.createElement('span');
-      span.textContent = text[i];
-      span.style.animationDelay = `${i * 0.1}s`;
-      h1.appendChild(span);
+    const p = document.querySelector('p');
+    const text = p.innerHTML;
+    p.innerHTML = '';
+    const lines = text.split('<br>');
+    for (let i = 0; i < lines.length; i++) {
+        for (let j = 0; j < lines[i].length; j++) {
+            const span = document.createElement('span');
+            span.textContent = lines[i][j];
+            span.style.animationDelay = `${(i * lines[i].length + j) * 0.1}s`;
+            p.appendChild(span);
+        }
+        if (i < lines.length - 1) {
+            p.appendChild(document.createElement('br'));
+        }
     }
   </script>
 </body>
